@@ -22,6 +22,9 @@ jobs:
         with:
           submodules: 'true'
 
+      - name: CPU info (fork-only measurement step)
+        run: lscpu | grep -E 'Model name|^CPU\(s\)|Architecture'
+
       - name: Cache pip downloads for aarch64 job
         uses: actions/cache@v5
         with:
